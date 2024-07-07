@@ -1,8 +1,8 @@
-#  SorteOnlineDesafio Documentation
+# SorteOnlineDesafio Documentation
 
 ## 📄 Overview
 
-SorteOnlineDesafioApi is an API designed to manage clients and orders for a store.
+SorteOnlineDesafioApi is an ASP.NET Web API project designed to manage clients and orders for a store. It is built using .NET version 7.0.
 
 ## 🌐 Base URL
 
@@ -12,11 +12,30 @@ The base URL for all endpoints is `https://localhost:7131/api`.
 
 Authentication is required to access endpoints prefixed with "user" and "store". Authentication is done via Bearer Token.
 
-## 📚 Controllers
+### Accessing Endpoints with Authentication
+
+1. **Lock Icon Button**: Click on the lock icon button located at the top-right corner of the Swagger UI.
+   - This will allow you to authorize requests by entering your Bearer Token.
+
+   ![alt text](images/image.png)
+
+2. **Bearer Token**: Once authorized, you can input your Bearer Token in the "Bearer Token" input box located next to the lock icon.
+   - Use the token received after successful authentication to access protected endpoints prefixed with "user" and "store".
+
+   ![alt text](images/image-1.png)
+
+3. **Getting the Bearer Token**:
+   - To obtain the Bearer Token:
+     - Use the **Sign Up** (`/auth/signup`) endpoint to register a new user with name, email, and password.
+     - Or use the **Sign In** (`/auth/signin`) endpoint to authenticate with your registered email and password.
+   - Upon successful registration or authentication, the response body will include the Bearer Token required for subsequent requests.
+
+   ![alt text](images/image-3.png)
 
 ### AuthController
 
 #### 🔑 Sign In
+
 
 - **Method:** POST
 - **Endpoint:** /auth/signin
